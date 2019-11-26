@@ -1,0 +1,15 @@
+
+docker build -t bind-docker:1.0 .
+docker tag bind-docker:1.0 grahamh/bind-docker:1.0
+docker push grahamh/bind-docker:1.0
+
+docker run -it -d --name=bootstrap-dns \
+--dns=8.8.8.8 --dns=8.8.4.4 \
+-p 53:53/udp -p 53:53 \
+-v "$(pwd)"/configs:/etc/bind:rw \
+-v "$(pwd)"/varcache:/var/cache/bind:rw \
+-v "$(pwd)"/varbind:/var/bind:rw \
+grahamh/bind-docker:1.0
+
+
+dig master1.gkvop.mesoslab.io @127.0.0.1

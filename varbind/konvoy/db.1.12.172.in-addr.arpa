@@ -1,0 +1,21 @@
+$ORIGIN .
+$TTL 10800	; 3 hours
+1.12.172.in-addr.arpa	IN      SOA     bootstrap.gkvop.mesoslab.io. root.1.12.172.in-addr.arpa. (
+				136        ; serial
+				86400      ; refresh (1 day)
+				3600       ; retry (1 hour)
+				604800     ; expire (1 week)
+				3600       ; minimum (1 hour)
+				)
+			NS bootstrap.gkvop.mesoslab.io.
+$ORIGIN	1.12.172.in-addr.arpa.
+$TTL 86400	; 1 day
+181	IN	PTR	bootstrap.gkvop.mesoslab.io.
+22	IN	PTR	master1.gkvop.mesoslab.io.
+78	IN	PTR	master2.gkvop.mesoslab.io.
+210	IN	PTR	master3.gkvop.mesoslab.io.
+127	IN	PTR	node1.gkvop.mesoslab.io.
+128	IN	PTR	node2.gkvop.mesoslab.io.
+142	IN	PTR	node3.gkvop.mesoslab.io.
+203	IN	PTR	node4.gkvop.mesoslab.io.
+
